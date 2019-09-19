@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Averroès tu es mutltimillionaire!</title>
+</head>
+<body>
+     
+     <h2>
+          <div id="output">Je suis libre financièrement!</div>
+     </h2>     
+     
+     
+     
+     <script>
+     
+          var answer = "something went wrong";
+          var output = document.getElementById("output");
+          
+          var question = prompt("Ask me anything");
+          var randomNumber = Math.floor(Math.random()*6);
+          switch(randomNumber){
+               case 0:
+                    answer = "it will work out";
+                    break;
+               case 1:
+                    answer = "you can do it";
+                    break;
+               case 2:
+                    answer = "I don't know";
+                    break;
+               case 3:
+                    answer = "anything is possible";
+                    break;
+               default:
+                    answer = "who you spend time with is who you become";
+          }
+          
+          output.innerHTML = "You asked me "+question+"<br> I think that "
+               + answer;
+
+         
+         
+     </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
