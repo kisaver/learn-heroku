@@ -47,6 +47,8 @@
                window.onload = function() {
                	canvas = document.getElementById('gameCanvas');
                	canvasContext = canvas.getContext('2d');
+                    canvasContext.font = "50px Arial";
+
                
                	var framesPerSecond = 30;
                	setInterval(function() {
@@ -165,7 +167,6 @@
                
                	canvasContext.fillText(player1Score, 100, 100);
                	canvasContext.fillText(player2Score, canvas.width-100, 100);
-                    canvasContext.font = "50px Arial";
                     
                }
                
