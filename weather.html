@@ -22,7 +22,7 @@
         <form class="col-sm-8 offset-sm-2" id="city-form">
           <div class="form-group">
             <label for="city">Enter your city here:</label>
-            <input type="text" id="city" class="form-control" required>
+            <input type="text" id="city" class="form-control" autocomplete="off" required>
           </div>
           <button class="btn btn-success" type="submit">Check the weather!</button>
         </form>
@@ -35,7 +35,7 @@
     </main>
   </div>
   <script>
-       // Access DOM elements
+       // Access DOM elements    
 const reportSection = document.getElementById('weather-report');
 const cityForm = document.getElementById('city-form');
 const cityInput = document.getElementById('city');
