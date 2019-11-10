@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    
+    <style>
+         
+         .btn{
+              height: 50px;
+              width: 100px;
+              background-color: red;
+              color: white;
+              border-radius: 15px;
+              font-size: 1.8em;
+         }
+         
+         .box{
+              height: 100px;
+              width: 100px;
+              text-align: center;
+              border:1px solid black;
+              display: inline-block;
+         }
+         
+    </style>
+    
+</head>
+<body>
+
+     <input type="button" value="Start" onclick="start()" class="btn">
+     <h3>
+          <div id="message1">Welcome</div>
+          <div id="message2">Click to Start</div>
+     </h3>
+     <div id="output"></div>
+
+     <script>
+          var myArray = [];
+          var people = ["Laurence", "Mike", "John", "Larry",
+               "Kim", "Joanne", "Lisa", "Janet", "Jane"];
+          var n= "";
+          var arr = [];
+          var arr2 = [];
+
+          function start(){
+               console.log(event.target.parentElement.children[1].children[1].innerHTML);
+               console.dir(event);
+               var c ="";
+               myArray = people.slice();
+               myArray.sort(function(a, b){
+                    return 0.5 - Math.random();
+               });
+               
+               arr2 = myArray.slice();
+
+               for(var i=0; i<myArray.length; i++){
+                    arr[i] = myArray[i].split('').sort(function(a,b){
+                              return 0.5 - Math.random();
+                         });
+               }
+               
+               console.log(arr);
+               
+               for(var i=0; i<arr.length; i++){
+                    for(var j=0; j<arr[i].length; j++){
+                         c += arr[i][j];
+                    }
+               
+                    myArray[i] = c;
+                    c = "";
+               }
+               
+               console.log(myArray);
+
+               for (var i=0; i<myArray.length; i++){
+                    
+                    document.getElementById("output").innerHTML += "<div class='box'  id="+i+
+                         " onmouseover='names()'"+"onmouseout='h()'"+"onclick='remove()'"+">"+
+                         "Hidden "+(i+1)+"<div>";
+                    document.getElementById("output").children[i].id = i;
+               }
+
+               n = people[Math.floor(Math.random()*people.length)];
+          
+               document.getElementById("message1").innerHTML = "find "+n;
+
+
+          }
+
+          
+          function names(){
+               event.target.innerText = myArray[event.target.id];
+               
+          }
+          
+          function h(){
+               event.target.innerText = "hidden "+event.target.id;
+               
+          }
+          
+          function remove(){
+               console.log(n);
+               var a = 0;
+               var b = 0; 
+               for(var i=0; i<n.length; i++){
+                    a += n.charCodeAt(i);
+                    b += event.target.innerText.charCodeAt(i);
+                    console.log(a);
+                    console.log(b);
+               }
+               
+               if(a == b){
+                    arr2.splice(event.target.id,1);
+                    myArray.splice(event.target.id,1);
+                    document.getElementById("output").removeChild(event.target);
+                    console.log(arr2);
+                    n = arr2[Math.floor(Math.random()*arr2.length)];
+                    document.getElementById("message1").innerHTML = "find "+n;
+                    
+                    console.dir(event);
+
+                    for (var i=0; i<arr2.length; i++){
+                         document.getElementById("output").children[i].id = i;
+                         console.log(i);
+                    }
+               
+               }
+               
+               if(myArray.length == 0){
+                    document.getElementById("message1").innerHTML = "WELL PLAYED!";
+                    document.getElementById("message2").innerHTML = "";
+
+               }
+
+          }
+          
+          
+          
+     </script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+</head>
+<body>
+     <h2>
+
+          First: <input type="text" id="num1">
+          Second: <input type="text" id="num2">
+          <div>
+               <input type="button" onclick="addBy()" value="   Add   ">
+               <input type="button" onclick="subtractBy()" value="   Subtract   ">
+               <input type="button" onclick="multiplyBy()" value="   Multiply   ">
+               <input type="button" onclick="devideBy()" value="   Divide   ">
+               <input type="button" onclick="modulusBy()" value="   Modulus   ">
+          </div>     
+          
+     </h2>
+     
+     <h2>Total: <div id = "output"></div></h2>
+     
+     
+     
+     <script>
+
+          var output = document.getElementById("output");
+          var num1 = document.getElementById("num1");
+          var num2 = document.getElementById("num2");
+          
+          function addBy(){
+               outC(num1.value,num2.value,"+",function(a,b){
+                    return a + b;
+               })
+          }
+          
+          function subtractBy(){
+               outC(num1.value,num2.value,"-",function(a,b){
+                    return a - b;
+               })
+          }
+          
+          function multiplyBy(){
+               outC(num1.value,num2.value,"*",function(a,b){
+                    return a*b;
+               })
+          }
+          
+          function devideBy(){
+               outC(num1.value,num2.value,"/",function(a,b){
+                    return a/b;
+               })
+          }
+          
+          function modulusBy(){
+               outC(num1.value,num2.value,"%",function(a,b){
+                    return a%b;
+               })
+          }
+          
+          function outC(a,b,s,cback){
+               var result = cback(Number(a), Number(b));
+               output.innerHTML += a+""+s+""+b+"="+result+"<br>";
+          }
+          
+
+
+          
+     </script>
+     
+
+</body>
+</html>
