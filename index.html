@@ -20,6 +20,38 @@
 
   <!-- Custom styles for this template -->
   <link href="Index/css/resume.min.css" rel="stylesheet">
+  
+  <style>
+    
+      .star-icon {
+        color: #ddd;
+        font-size: 2em;
+        position: relative;
+    }
+    .star-icon.full:before {
+        text-shadow: 0 0 2px rgba(0,0,0,0.7);
+        color: #FDE16D;
+        content: '\2605'; /* Full star in UTF-8 */
+        position: absolute;
+        left: 0;
+    }
+    .star-icon.half:before {
+        text-shadow: 0 0 2px rgba(0,0,0,0.7);
+        color: #FDE16D;
+        content: '\2605'; /* Full star in UTF-8 */
+        position: absolute;
+        left: 0;
+        width: 50%;
+        overflow: hidden;
+    }
+    @-moz-document url-prefix() { /* Firefox Hack :( */
+      .star-icon {
+        font-size: 50px;
+        line-height: 34px;
+      }
+    }
+    
+   </style> 
 
 </head>
 
@@ -243,20 +275,30 @@
         <h2 class="mb-5">Skills</h2>
 
         <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-        <ul class="list-inline dev-icons">
+        <ul class="dev-icons">
           <li class="list-inline-item">
             <i class="fab fa-html5"></i>
             <span class="star-icon full">☆</span>
             <span class="star-icon full">☆</span>
             <span class="star-icon full">☆</span>
-            <span class="star-icon half">☆</span>
-            <span class="star-icon">☆</span>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon full">☆</span>
           </li>
           <li class="list-inline-item">
             <i class="fab fa-css3-alt"></i>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon full">☆</span>
           </li>
           <li class="list-inline-item">
             <i class="fab fa-js-square"></i>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon half">☆</span>
           </li>
           <!--
           <li class="list-inline-item">
@@ -265,6 +307,11 @@
           -->
           <li class="list-inline-item">
             <i class="fab fa-react"></i>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon full">☆</span>
+            <span class="star-icon">☆</span>
+            <span class="star-icon">☆</span>
           </li>
           <!--
           <li class="list-inline-item">
