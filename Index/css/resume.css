@@ -73,7 +73,7 @@ p.lead {
   margin-right: 0;
 }
 
-.social-icons {
+.social-icons a:hover{
   background-color: #BD5D38;
 }
 
@@ -81,7 +81,7 @@ p.lead {
   font-size: 4rem;
 }
 
-.dev-icons .list-inline-item {
+.dev-icons .list-inline-item i:hover {
   color: #BD5D38;
 }
 
