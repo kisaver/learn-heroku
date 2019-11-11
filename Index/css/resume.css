@@ -73,15 +73,15 @@ p.lead {
   margin-right: 0;
 }
 
-.social-icons a:hover {
+.social-icons {
   background-color: #BD5D38;
 }
 
 .dev-icons {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
-.dev-icons .list-inline-item i:hover {
+.dev-icons .list-inline-item {
   color: #BD5D38;
 }
 
