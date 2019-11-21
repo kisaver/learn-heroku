@@ -63,7 +63,11 @@
                aTitle[i].onclick = function(){
                     if(this.nextElementSibling.classList.contains("active")){
                          this.nextElementSibling.classList.remove("active");
-                    }                         
+                    } 
+                    /*
+                         conClass(this);
+                         this.nextElementSibling.classList.toggle("active");*/
+                    
                }
                
           }
@@ -73,6 +77,10 @@
           function conClass(t){
                for(var i=0; i<content.length; i++){
                     content[i].classList.remove("active");
+                    /*if(t!=aTitle[i]){
+                         content[i].classList.remove("active");
+                    }
+                    */
                }
           }
           
