@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+</head>
+<body> 
+     
+          <input type="text" id="item">
+          <br>
+          <input type="button" onclick="additem()" value="Add item">
+          <h2>
+               <div id="output"></div>
+          </h2>
+
+     <script>
+     
+          var i = 0;
+
+          function additem(){
+               i = i+1;
+               var output = document.getElementById("output");
+               var item = document.getElementById("item").value;
+               output.innerHTML += i+". "+ item+"<br>";
+          }
+          
+          
+          
+     </script>
+     
+
+</body>
+</html>
