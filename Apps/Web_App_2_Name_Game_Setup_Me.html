@@ -44,8 +44,7 @@
           var arr2 = [];
 
           function start(){
-               console.log(event.target.parentElement.children[1].children[1].innerHTML);
-               console.dir(event);
+               
                var c ="";
                myArray = people.slice();
                myArray.sort(function(a, b){
@@ -60,7 +59,6 @@
                          });
                }
                
-               console.log(arr);
                
                for(var i=0; i<arr.length; i++){
                     for(var j=0; j<arr[i].length; j++){
@@ -100,29 +98,24 @@
           }
           
           function remove(){
-               console.log(n);
                var a = 0;
                var b = 0; 
                for(var i=0; i<n.length; i++){
                     a += n.charCodeAt(i);
                     b += event.target.innerText.charCodeAt(i);
-                    console.log(a);
-                    console.log(b);
+                   
                }
                
                if(a == b){
                     arr2.splice(event.target.id,1);
                     myArray.splice(event.target.id,1);
                     document.getElementById("output").removeChild(event.target);
-                    console.log(arr2);
                     n = arr2[Math.floor(Math.random()*arr2.length)];
                     document.getElementById("message1").innerHTML = "find "+n;
                     
-                    console.dir(event);
 
                     for (var i=0; i<arr2.length; i++){
                          document.getElementById("output").children[i].id = i;
-                         console.log(i);
                     }
                
                }
