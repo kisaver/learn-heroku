@@ -7,11 +7,14 @@
             border: 2px solid #ddd;
             padding: 10px;
         }
+        
+     
+        
     </style>
 </head>
 
 <body>
-    <div id="message">Message</div>
+    <div id="message">message</div>
     <div>
         <input type="text" id="addFriend">
         <input type="button" id="addNew" value="Add Friend">
@@ -22,6 +25,7 @@
         var myArray = ["Laurence", "Mike", "John", "Larry"];
         var message = document.getElementById('message');
         var addNew = document.getElementById('addNew');
+        var start = 0;
         addNew.onclick = function () {
             var q = document.getElementById('addFriend').value;
             /*var tr = document.createElement('tr');
@@ -32,19 +36,39 @@
             container.appendChild(tr);*/
             myArray.push(q);
             //voteCount();
+            //start = myArray.length - 1;
             build();
+            //start = 1;
         }
+        
+        
 
         function build() {
             var html = "<h1>My Friends Table</h1><table>";
-            for (var x = 0; x < myArray.length; x++) {
-                html += '<tr> <td class="box" >\
-                <input data-row="' + (x+1) + '" data-vote="0" type="button" class="add" value="add"> <br>'
-                + (x + 1) + '</td> <td>' + myArray[x] + '</td> <td>0</td> </tr>';
+            if(start == 0){
+            
+                 for (var x = 0; x < myArray.length; x++) {
+     
+                     html += '<tr> <td class="box" >\
+                     <input data-row="' + x + '" data-vote="0" type="button" class="add" value="add"> <br>'
+                     + (x + 1) + '</td> <td width="50%">' + myArray[x] + '</td> <td>0</td> </tr>';
+                 }
+                 html += '</table>';
+                 document.getElementById('output').innerHTML = html;
+                 voteCount();
+                 start = 1;
+            } else {
+                 for (var x = myArray.length-1; x < myArray.length; x++) {
+                    html = "<table>";
+                     html += '<tr> <td class="box" >\
+                     <input data-row="' + x + '" data-vote="0" type="button" class="add" value="add"> <br>'
+                     + (x + 1) + '</td> <td width="50%">' + myArray[x] + '</td> <td>0</td> </tr>';
+                 }
+                 html += '</table>';
+                 document.getElementById('output').innerHTML += html;
+                 voteCount();
+                 
             }
-            html += '</table>';
-            document.getElementById('output').innerHTML = html;
-            voteCount();
         }
 
         function voteCount() {
@@ -56,8 +80,9 @@
                 elbox[x].onclick = function () {
 
                     a = this.closest('[data-row]').getAttribute('data-row');
-                    console.log(this.closest('[data-row]'))
-                    message.innerHTML = myArray[a] + " is on row #" + a;
+                    
+                    message.innerHTML = myArray[a] + " is on row #";
+                    message.innerHTML += parseInt(a)+1
                     v = this.closest('[data-vote]').getAttribute('data-vote');
                     console.log(this.closest('[data-vote]'))
                     v++;
