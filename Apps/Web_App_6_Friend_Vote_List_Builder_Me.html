@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div id="message">Complete JavaScript Course</div>
+    <div id="message">Message</div>
     <div>
         <input type="text" id="addFriend">
         <input type="button" id="addNew" value="Add Friend">
@@ -39,7 +39,7 @@
             var html = "<h1>My Friends Table</h1><table>";
             for (var x = 0; x < myArray.length; x++) {
                 html += '<tr> <td class="box" >\
-                <input data-row="' + x + '" data-vote="0" type="button" class="add" value="add"> <br>'
+                <input data-row="' + (x+1) + '" data-vote="0" type="button" class="add" value="add"> <br>'
                 + (x + 1) + '</td> <td>' + myArray[x] + '</td> <td>0</td> </tr>';
             }
             html += '</table>';
