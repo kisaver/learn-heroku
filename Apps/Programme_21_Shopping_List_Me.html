@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping List</title>
+</head>
+<body>
+     <div id="message" style="font-size: 20px">message</div>
+     <div style="font-size: 25px">
+          <input type="text" id="addItem">
+          <input type="button" id="addNew" value="Add to List">
+     </div>
+     <div id="output">
+          <h1>Shopping List</h1>
+          <ol id="sList" style="font-size: 25px">
+               
+               
+          </ol>
+          
+     </div>
+     
+     <script>
+          
+          var addNew = document.getElementById('addNew');
+          var sList = document.getElementById('sList');
+          
+          addNew.onclick = function() {
+               var item = document.getElementById('addItem').value;
+               document.getElementById('message').innerHTML = item;
+               console.log(item)
+               var li = document.createElement('LI');
+               var textItem = document.createTextNode(item);
+               li.appendChild(textItem);
+               sList.appendChild(li);
+               document.getElementById('addItem').value = "";
+          }
+          
+          
+          
+     </script>
+     
+     
+
+</body>
+</html>
